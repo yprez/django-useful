@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='my-package',
+    name='django-useful',
     author='Yuri Prezument',
     author_email='y@yprez.com',
     version='0.1.0a0',

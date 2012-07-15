@@ -4,7 +4,7 @@ setup(
     name='my-package',
     author='Yuri Prezument',
     author_email='y@yprez.com',
-    version='0.1.0',
+    version='0.1.0a0',
     packages=find_packages(),
     license='ISC',
     url='http://github.com/yprez/django-useful',

@@ -21,6 +21,8 @@ LANGUAGE_CODE = 'en-us'
 
 SITE_ID = 1
 
+STATIC_URL = '/static/'
+
 SECRET_KEY = 't^4dt#fkxftpborp@%lg*#h2wj%vizl)#pkkt$&amp;0f7b87rbu6y'
 
 TEMPLATE_LOADERS = (

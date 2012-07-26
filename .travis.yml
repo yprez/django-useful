@@ -7,6 +7,9 @@ env:
   - DJANGO=1.4
 install:
   - pip install django==$DJANGO --use-mirrors
+  - pip install -e pep8 --use-mirrors
   - pip install -e . --use-mirrors
+before_script:
+  - pep8 useful
 script:
   - python test_project/manage.py test useful -v2

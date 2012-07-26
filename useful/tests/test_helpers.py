@@ -2,6 +2,9 @@ from django.test import TestCase
 from django.contrib.auth.models import User
 
 from useful.helpers import get_object_or_none
+from useful.helpers import json_response
+
+import json
 
 
 class GetObjectOrNoneTestCase(TestCase):
@@ -26,3 +29,32 @@ class GetObjectOrNoneTestCase(TestCase):
 
         user = get_object_or_none(User, email='doesnot@exist.com')
         self.assertIsNone(user)
+
+
+class JsonReponseTestCase(TestCase):
+    def setUp(self):
+        self.data = {
+            'dict': {
+                'a': 'b',
+                'c': 'd',
+                'e': {'nested': 'dict'},
+                'f': ['list', 'as', 'value'],
+                'g': ['mixing', {'value': 'types'}],
+                'e': u'unicode string',
+            }
+        }
+
+    def test_json_response(self):
+        response = json_response(self.data['dict'])
+
+        self.assertIsNotNone(response)
+
+        from django.http import HttpResponse
+        self.assertIsInstance(response, HttpResponse)
+
+        self.assertIsNotNone(response.content)
+        self.assertIsInstance(response.content, str)
+
+        self.assertEquals(json.loads(response.content), self.data['dict'])
+
+        self.assertEquals(response.status_code, 200)

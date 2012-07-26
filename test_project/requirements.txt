@@ -1,0 +1,4 @@
+Django==1.4
+argparse==1.2.1
+django-useful==0.1.0a0
+wsgiref==0.1.2

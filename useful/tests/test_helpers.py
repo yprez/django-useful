@@ -1,5 +1,6 @@
-from django.test import TestCase
 from django.contrib.auth.models import User
+from django.test import TestCase
+from django.http import HttpResponse
 
 from useful.helpers import get_object_or_none
 from useful.helpers import json_response
@@ -41,7 +42,9 @@ class JsonReponseTestCase(TestCase):
                 'f': ['list', 'as', 'value'],
                 'g': ['mixing', {'value': 'types'}],
                 'e': u'unicode string',
-            }
+            },
+            'null': None,
+            'list': [1, 2, 'a', 'b'],
         }
 
     def test_json_response(self):
@@ -49,7 +52,6 @@ class JsonReponseTestCase(TestCase):
 
         self.assertIsNotNone(response)
 
-        from django.http import HttpResponse
         self.assertIsInstance(response, HttpResponse)
 
         self.assertIsNotNone(response.content)
@@ -58,3 +60,19 @@ class JsonReponseTestCase(TestCase):
         self.assertEquals(json.loads(response.content), self.data['dict'])
 
         self.assertEquals(response.status_code, 200)
+
+    def test_list_json_response(self):
+        response = json_response(self.data['list'])
+
+        self.assertIsNotNone(response.content)
+        self.assertIsInstance(response.content, str)
+
+        self.assertEquals(json.loads(response.content), self.data['list'])
+
+    def test_null_json_response(self):
+        response = json_response(self.data['null'])
+
+        self.assertIsNotNone(response.content)
+        self.assertIsInstance(response.content, str)
+
+        self.assertEquals(json.loads(response.content), self.data['null'])

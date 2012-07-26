@@ -13,8 +13,8 @@ def json_response(data, status=200, serializer=None):
 
 
 def jsonp_response(data, callback="f", status=200, serializer=None):
-    ret = "{callback}('{val}');".format(callback=callback,
-                                    val=json.dumps(data, default=serializer))
+    val = json.dumps(data, default=serializer)
+    ret = "{callback}('{val}');".format(callback=callback, val=val)
 
     return HttpResponse(ret,
                         status=status,

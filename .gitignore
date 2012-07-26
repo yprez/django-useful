@@ -25,3 +25,6 @@ pip-log.txt
 
 #Docs build
 _build
+
+# Other
+*.nja

@@ -11,5 +11,4 @@ install:
   - pip install -e . --use-mirrors
 script:
   - python test_project/manage.py test useful -v2
-after_script:
   - pep8 useful -v

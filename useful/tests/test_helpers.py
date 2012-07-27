@@ -5,6 +5,7 @@ from django.http import HttpResponse
 from useful.helpers import get_object_or_none
 from useful.helpers import json_response
 
+import datetime
 import json
 
 
@@ -45,6 +46,7 @@ class JsonReponseTestCase(TestCase):
             },
             'null': None,
             'list': [1, 2, 'a', 'b'],
+            'with_time': {'a': 'b', 'time': datetime.datetime.now()}
         }
 
     def test_json_response(self):
@@ -76,3 +78,23 @@ class JsonReponseTestCase(TestCase):
         self.assertIsInstance(response.content, str)
 
         self.assertEquals(json.loads(response.content), self.data['null'])
+
+    def test_json_response_code(self):
+        response = json_response(self.data['null'], status=400)
+        self.assertEquals(response.status_code, 400)
+
+    def test_json_serializer(self):
+        dthandler = lambda x: (x.isoformat()
+                               if isinstance(x, datetime.datetime) else x)
+
+        typerror = lambda x: json_response(self.data['with_time'])
+
+        self.assertRaises(TypeError, typerror)
+
+        response = json_response(self.data['with_time'], serializer=dthandler)
+
+        # Back to datetime object
+        t = datetime.datetime.strptime(json.loads(response.content)['time'],
+                                       '%Y-%m-%dT%H:%M:%S.%f')
+
+        self.assertEquals(t, self.data['with_time']['time'])

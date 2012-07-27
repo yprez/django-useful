@@ -1,1 +1,2 @@
-from test_helpers import *
+from helpers import *
+from views import *

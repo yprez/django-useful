@@ -10,6 +10,8 @@ setup(
     url='http://github.com/yprez/django-useful',
     description='Reusable Django snippets',
     long_description=open('README.rst').read(),
+    include_package_data=True,
+    zip_safe=False,
 #    install_requires=[
 #    ],
 #    classifiers=(

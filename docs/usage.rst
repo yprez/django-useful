@@ -32,3 +32,25 @@ This also simplifying more advanced cases::
 
     user = get_object_or_none(SomeModel, field='value1') \
             or get_object_or_none(SomeModel, field='value2')
+
+
+json_response
+-------------
+
+.. autofunction:: useful.helpers.json_response
+
+...
+
+jsonp_response
+--------------
+
+.. autofunction:: useful.helpers.jsonp_response
+
+...
+
+
+
+Views
+=====
+
+...

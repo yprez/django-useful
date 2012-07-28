@@ -6,11 +6,13 @@
 Welcome to Django-useful's documentation!
 =========================================
 
-Contents:
+Contents
+========
 
 .. toctree::
    :maxdepth: 2
 
+   usage
 
 
 Indices and tables

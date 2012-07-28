@@ -14,6 +14,14 @@ setup(
     zip_safe=False,
 #    install_requires=[
 #    ],
-#    classifiers=(
-#    ),
+    classifiers=(
+        'Development Status :: 2 - Pre-Alpha',
+        'Framework :: Django',
+        'Intended Audience :: Developers',
+        'Natural Language :: English',
+        'License :: OSI Approved :: ISC License (ISCL)',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2.7',
+    ),
 )

@@ -10,9 +10,6 @@ get_object_or_none
 
 .. autofunction:: useful.helpers.get_object_or_none
 
-Allows querying for an object that might not exist without triggering
-an exception.
-
 **Sample usage:**
 ::
 
@@ -24,7 +21,7 @@ an exception.
     if not user:
         pass  # ... do something
 
-Without the shortcut you would have to do something like::
+While withouth the shortcut you would do something like::
 
     try:
         user = User.objects.get(username='test')
@@ -35,9 +32,3 @@ This also simplifying more advanced cases::
 
     user = get_object_or_none(SomeModel, field='value1') \
             or get_object_or_none(SomeModel, field='value2')
-
-Views
-=====
-
-...
-

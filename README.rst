@@ -14,4 +14,9 @@ and compatible with several Django and Python versions.
 Currently this package is still under development, and intended for
 my personal use only. Use at your own risk...
 
+Compatible with:
+
+* **Python:** 2.6, 2.7
+* **Django:** 1.3, 1.4
+
 **Documentation:** Coming soon...

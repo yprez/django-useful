@@ -41,6 +41,7 @@ json_response
 
 **Sample usage:**
 ::
+
     # views.py
     from useful.helpers import json_response
 
@@ -87,4 +88,22 @@ Usage is the same as `json_response`_
 Views
 =====
 
-...
+ExtraContextTemplateView
+------------------------
+
+.. autoclass:: useful.views.ExtraContextTemplateView
+
+**Sample usage:**
+::
+
+    # urls.py
+
+    from useful.views import ExtraContextTemplateView
+
+    urlpatterns = patterns('',
+        # ...
+        url(r'^sample_extra_context_view$',
+            ExtraContextTemplateView.as_view(template_name='sample.html',
+                                             extra_context={'extra': 'context'}),
+            name='sample_extra_context_view'),
+    )

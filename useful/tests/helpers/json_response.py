@@ -1,10 +1,10 @@
+import datetime
+import json
+
 from django.test import TestCase
 from django.http import HttpResponse
 
 from useful.helpers import json_response, jsonp_response
-
-import datetime
-import json
 
 
 class JsonReponseTestCase(TestCase):

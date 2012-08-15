@@ -27,4 +27,5 @@ pip-log.txt
 _build
 
 # Other
+*.db
 *.nja

@@ -53,6 +53,10 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # 'django.contrib.admin',
 
-    'useful'  # Import the app to run tests
+    'djcelery',
+
+    'useful',  # Import the app to run tests
 )
 
+BROKER_BACKEND = 'memory'
+CELERY_ALWAYS_EAGER = True

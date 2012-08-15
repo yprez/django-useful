@@ -9,14 +9,14 @@ class ExtraContextTemplateViewTestCase(TestCase):
     def setUp(self):
         self.client = Client()
 
-    def test_no_contex(self):
+    def test_no_context(self):
         url = reverse('test_extra_context_view_no_context')
         response = self.client.get(url)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.template_name, ['test.html'])
         self.assertFalse('extra' in response.context)
 
-    def test_with_contex(self):
+    def test_with_context(self):
         url = reverse('test_extra_context_view_w_context')
         response = self.client.get(url)
 

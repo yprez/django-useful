@@ -7,6 +7,7 @@ env:
   - DJANGO=1.4
 install:
   - pip install django==$DJANGO --use-mirrors
+  - pip install celery==2.5.5 django-celery==2.5.5 --use-mirrors
   - pip install pep8 --use-mirrors
   - pip install -e . --use-mirrors
 script:

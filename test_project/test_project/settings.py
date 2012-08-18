@@ -60,3 +60,13 @@ INSTALLED_APPS = (
 
 BROKER_BACKEND = 'memory'
 CELERY_ALWAYS_EAGER = True
+
+from datetime import timedelta
+
+CELERYBEAT_SCHEDULE = {
+    'cleanup': {
+        'task': 'useful.tasks.call_management_command',
+        'schedule': timedelta(seconds=10),
+        'args': ('validate', ),
+    },
+}

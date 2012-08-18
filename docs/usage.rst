@@ -107,3 +107,35 @@ ExtraContextTemplateView
                                              extra_context={'extra': 'context'}),
             name='sample_extra_context_view'),
     )
+
+Tasks
+=====
+
+Common `Celery`_ tasks.
+
+call_management_command
+-----------------------
+
+.. autofunction:: useful.tasks.call_management_command
+
+This task is useful for converting periodic tasks in the form of Django
+management being run as cron jobs to `Celery periodic tasks`_ run with
+celerybeat.
+
+**Sample usage:**
+::
+
+    # settings.py
+    from datetime import timedelta
+
+    CELERYBEAT_SCHEDULE = {
+        'cleanup': {
+            'task': 'useful.tasks.call_management_command',
+            'schedule': timedelta(hours=1),
+            'args': ('cleanup', ),
+        },
+    }
+
+
+.. _`Celery`: http://celeryproject.org/
+.. _`Celery periodic tasks`: http://celery.github.com/celery/userguide/periodic-tasks.html

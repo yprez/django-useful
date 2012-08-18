@@ -23,7 +23,33 @@ personal use. New features will be added gradually.
 * **Django:** 1.3, 1.4
 * **Celery:** 2.5, 3.0 *(optional)*
 
+Installation
+------------
+
+Install by using pip or easy_install::
+
+  pip install django-useful
+
+Or install from source::
+
+    git clone git@github.com:yprez/django-useful.git
+    cd django-useful
+    python setup.py install
+
+To add this application into your project, just add it to your
+``INSTALLED_APPS`` setting::
+
+    INSTALLED_APPS = (
+        ...
+        'useful',
+    )
+
+
+------------
+
+
 For more details, see the `Documentation`_ (incomplete).
+
 
 .. _`Documentation`: http://django-useful.rtfd.org/
 

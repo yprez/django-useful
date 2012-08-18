@@ -48,7 +48,7 @@ To add this application into your project, just add it to your
 ------------
 
 
-For more details, see the `Documentation`_ (incomplete).
+For more details, see the `Documentation`_.
 
 
 .. _`Documentation`: http://django-useful.rtfd.org/

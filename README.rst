@@ -21,6 +21,7 @@ personal use. New features will be added gradually.
 
 * **Python:** 2.6, 2.7
 * **Django:** 1.3, 1.4
+* **Celery:** 2.5, 3.0 *(optional)*
 
 For more details, see the `Documentation`_ (incomplete).
 

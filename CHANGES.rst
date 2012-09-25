@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-v0.1.0 - xx/xx/xxxx
+v0.1.0 - 25/09/2012
 -------------------
 
 * Initial release.

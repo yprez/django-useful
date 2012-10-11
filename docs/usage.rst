@@ -130,7 +130,7 @@ celerybeat.
 
     CELERYBEAT_SCHEDULE = {
         'cleanup': {
-            'task': 'call_management_command',
+            'task': 'useful.tasks.call_management_command',
             'schedule': timedelta(hours=1),
             'args': ('cleanup', ),
         },

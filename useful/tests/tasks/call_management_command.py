@@ -12,3 +12,7 @@ class ManagementCommandTestCase(TestCase):
     def test_failure(self):
         t = call_management_command.delay('somethingrandomthatdoesntexist')
         self.assertEquals(t.status, 'FAILURE')
+
+    def test_name(self):
+        self.assertEquals(call_management_command.name,
+                          'call_management_command')

@@ -108,6 +108,33 @@ ExtraContextTemplateView
             name='sample_extra_context_view'),
     )
 
+
+Context Processors
+==================
+
+settings (context processor)
+----------------------------
+
+.. autofunction:: useful.context_processors.settings
+
+**Sample usage**
+
+Enable it in settings.py::
+
+    # settings.py
+    TEMPLATE_CONTEXT_PROCESSORS = (
+        # ...
+        'useful.context_processors.settings',
+    )
+
+Then access `{{ settings }}` in the template, for example::
+
+    {{ settings.SITE_NAME }}
+
+Or::
+
+    {% if settings.DEBUG %}<h1>Debug!</h1>{% endif %}
+
 Tasks
 =====
 

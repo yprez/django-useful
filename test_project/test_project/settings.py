@@ -58,6 +58,10 @@ INSTALLED_APPS = (
     'useful',  # Import the app to run tests
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'useful.context_processors.settings',
+)
+
 BROKER_BACKEND = 'memory'
 CELERY_ALWAYS_EAGER = True
 

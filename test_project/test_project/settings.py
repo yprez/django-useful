@@ -54,9 +54,12 @@ INSTALLED_APPS = (
     # 'django.contrib.admin',
 
     'djcelery',
+    'django_nose',
 
     'useful',  # Import the app to run tests
 )
+
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'useful.context_processors.settings',

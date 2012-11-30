@@ -7,9 +7,10 @@ env:
   - DJANGO=1.4
 install:
   - pip install django==$DJANGO --use-mirrors
+  - pip install nose django-nose --use-mirrors
   - pip install celery==2.5.5 django-celery==2.5.5 --use-mirrors
   - pip install pep8 --use-mirrors
   - pip install -e . --use-mirrors
 script:
-  - python test_project/manage.py test useful -v2
+  - python test_project/manage.py test useful -v2 -s
   - pep8 --exclude=*urls.py useful -v

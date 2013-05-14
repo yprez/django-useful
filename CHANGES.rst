@@ -1,23 +1,22 @@
 CHANGELOG
 =========
 
-v0.1.2 - 21/11/2012
--------------------
 
-* New features:
-    * Settings context processor - allows accessing settings from templates.
+0.1.2 - 21/11/2012
+------------------
 
-
-v0.1.1 - 11/10/2012
--------------------
-
-* Fixes:
-    * Task - call_management_command - set task name correctly
-      Was causing problems with some versions of Celery.
+* Settings context processor - allows accessing settings from templates.
 
 
-v0.1.0 - 25/09/2012
--------------------
+0.1.1 - 11/10/2012
+------------------
+
+* Bugfix: Task - call_management_command - set task name correctly.
+  Was causing problems with some versions of Celery.
+
+
+0.1.0 - 25/09/2012
+------------------
 
 * Initial release.
 * Included features:

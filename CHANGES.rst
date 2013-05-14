@@ -2,6 +2,12 @@ CHANGELOG
 =========
 
 
+0.1.3
+-----
+
+* Tested with Django 1.5.
+
+
 0.1.2 - 21/11/2012
 ------------------
 
@@ -11,8 +17,8 @@ CHANGELOG
 0.1.1 - 11/10/2012
 ------------------
 
-* Bugfix: Task - call_management_command - set task name correctly.
-  Was causing problems with some versions of Celery.
+* Bugfix: Task - call_management_command - set task name correctly
+  (was causing problems with some versions of Celery).
 
 
 0.1.0 - 25/09/2012

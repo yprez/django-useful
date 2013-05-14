@@ -20,8 +20,8 @@ personal use. New features will be added gradually.
 **Compatible with:**
 
 * **Python:** 2.6, 2.7
-* **Django:** 1.3, 1.4
-* **Celery:** 2.5, 3.0 *(optional)*
+* **Django:** 1.3, 1.4, 1.5
+* **Celery:** 2.5, 3 *(optional)*
 
 Installation
 ------------

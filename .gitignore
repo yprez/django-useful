@@ -29,3 +29,4 @@ _build
 # Other
 *.db
 *.nja
+*.sublime*

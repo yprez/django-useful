@@ -5,6 +5,7 @@ from django.test import TestCase
 from django.http import HttpResponse
 
 from useful.helpers import json_response, jsonp_response
+import six
 
 
 class JsonReponseTestCase(TestCase):
@@ -30,9 +31,10 @@ class JsonReponseTestCase(TestCase):
         self.assertIsInstance(response, HttpResponse)
 
         self.assertIsNotNone(response.content)
-        self.assertIsInstance(response.content, str)
+        self.assertIsInstance(response.content.decode(), six.string_types)
 
-        self.assertEquals(json.loads(response.content), self.data['dict'])
+        self.assertEquals(json.loads(response.content.decode()),
+                          self.data['dict'])
 
         self.assertEquals(response.status_code, 200)
 
@@ -40,17 +42,19 @@ class JsonReponseTestCase(TestCase):
         response = json_response(self.data['list'])
 
         self.assertIsNotNone(response.content)
-        self.assertIsInstance(response.content, str)
+        self.assertIsInstance(response.content.decode(), six.string_types)
 
-        self.assertEquals(json.loads(response.content), self.data['list'])
+        self.assertEquals(json.loads(response.content.decode()),
+                          self.data['list'])
 
     def test_null_json_response(self):
         response = json_response(self.data['null'])
 
         self.assertIsNotNone(response.content)
-        self.assertIsInstance(response.content, str)
+        self.assertIsInstance(response.content.decode(), six.string_types)
 
-        self.assertEquals(json.loads(response.content), self.data['null'])
+        self.assertEquals(json.loads(response.content.decode()),
+                          self.data['null'])
 
     def test_json_response_code(self):
         response = json_response(self.data['null'], status=400)
@@ -67,8 +71,9 @@ class JsonReponseTestCase(TestCase):
         response = json_response(self.data['with_time'], serializer=dthandler)
 
         # Back to datetime object
-        t = datetime.datetime.strptime(json.loads(response.content)['time'],
-                                       '%Y-%m-%dT%H:%M:%S.%f')
+        t = datetime.datetime.strptime(
+            json.loads(response.content.decode())['time'],
+            '%Y-%m-%dT%H:%M:%S.%f')
 
         self.assertEquals(t, self.data['with_time']['time'])
 
@@ -86,6 +91,6 @@ class JsonpReponseTestCase(TestCase):
         self.assertIsInstance(response, HttpResponse)
 
         self.assertIsNotNone(response.content)
-        self.assertIsInstance(response.content, str)
+        self.assertIsInstance(response.content.decode(), six.string_types)
 
         self.assertEquals(response.status_code, 200)

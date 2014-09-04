@@ -29,4 +29,4 @@ class SettingsContextProcessorTestCase(TestCase):
         response = self.client.get(url)
 
         self.assertEqual(response.status_code, 200)
-        self.assertIn('TEST_VALUE', response.content)
+        self.assertIn('TEST_VALUE', response.content.decode())

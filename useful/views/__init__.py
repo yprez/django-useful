@@ -1,1 +1,1 @@
-from extra_context_view import ExtraContextTemplateView
+from .extra_context_view import ExtraContextTemplateView

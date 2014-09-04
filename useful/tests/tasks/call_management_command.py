@@ -1,6 +1,5 @@
 from django.test.simple import DjangoTestSuiteRunner
 
-from djcelery.backends.database import DatabaseBackend
 from celery.task import Task
 
 from useful.tasks import call_management_command

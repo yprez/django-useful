@@ -1,1 +1,1 @@
-from call_management_command import *
+from .call_management_command import *

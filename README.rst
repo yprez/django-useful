@@ -4,9 +4,8 @@ django-useful
 
 A collection of reusable Django snippets.
 
-
-Unlike other similar packages, I'll try to keep it fully tested, documented,
-and compatible with several Django and Python versions.
+**Warning:** This project is not longer actively supported.
+Most of the functionallity isn't needed with newer versions of Django.
 
 
 **Travis CI build status:** |travis-ci-status|
@@ -16,6 +15,8 @@ and compatible with several Django and Python versions.
 Currently this package is still under development, and intended mainly for my
 personal use. New features will be added gradually.
 
+Unlike other similar packages, I'll try to keep it fully tested, documented,
+and compatible with several Django and Python versions.
 
 **Compatible with:**
 
